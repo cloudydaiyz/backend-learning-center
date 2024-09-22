@@ -31,7 +31,14 @@ def test_split():
 @pytest.fixture
 def listing():
     print('hello world')
-    return []
+    yield []
+    print('listing')
+
+@pytest.fixture
+def another_listing(listing):
+    print('another hello world')
+    yield []
+    print('another listing')
 
 def test_li_a(listing):
     listing.append(1)
@@ -40,6 +47,10 @@ def test_li_a(listing):
 def test_li_b(listing):
     listing.append(2)
     print(listing)
+
+def test_li_c(another_listing):
+    print("li_c")
+    print(another_listing)
 
 if __name__ == "__main__":
     pytest.main()

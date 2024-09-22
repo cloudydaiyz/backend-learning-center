@@ -1,0 +1,7 @@
+{
+  "type": "module",
+  "dependencies": {
+    "aws-cron-parser": "^1.1.12",
+    "cron-parser": "^4.9.0"
+  }
+}
