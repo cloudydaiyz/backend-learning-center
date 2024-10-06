@@ -17,7 +17,6 @@ async function fetchAndParseCSV() {
         const csvData = await response.text(); // Get CSV content as a string
 
         // Convert the CSV string into a readable stream
-        //   const readableStream = Readable.from(csvData);
         const readableStream = Readable.from(csvData);
 
         // Create an array to store parsed CSV rows
