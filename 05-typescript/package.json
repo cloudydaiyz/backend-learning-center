@@ -1,0 +1,19 @@
+{
+  "name": "05-typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node parse-csv.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "csv-parse": "^5.5.6"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.4"
+  }
+}
