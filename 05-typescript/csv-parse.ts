@@ -3,7 +3,6 @@ import { parse } from "csv-parse";
 import { Readable } from "stream";
 
 const url = "https://docs.google.com/spreadsheets/d/1Ita-QOxFBd37i-_7xxKtTOh4FghBknFY5WO9Yrqc2nE/gviz/tq?tqx=out:csv";
-// const url = "https://docs.google.com/spreadsheets/d/1Ita-QOxFBd37i-_7xxKtTOh4FghBknFY5WO9Yrqc2nE/gviz/tq?tqx=out:csv";
 
 async function fetchAndParseCSV() {
     try {
@@ -20,13 +19,12 @@ async function fetchAndParseCSV() {
         const readableStream = Readable.from(csvData);
 
         // Create an array to store parsed CSV rows
-        const results: any[] = [];
+        const results: string[][] = [];
 
         // Pipe the readable stream into the CSV parser
         const res = readableStream.pipe(parse({ delimiter: "," }))
             .on('data', (row: string[]) => {
                 results.push(row.map(r => r.trim())); // Push each row to the results array
-                // console.log("new row:", row);
             })
             .on('end', () => {
                 console.log('Parsed CSV data:', results);
@@ -34,7 +32,6 @@ async function fetchAndParseCSV() {
             })
             .on('error', (error) => {
                 console.log("err");
-                // console.log(error);
             });
         
     } catch (error) {
