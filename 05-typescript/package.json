@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && node a1.js",
+    "start": "tsc && node meta.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,7 +12,9 @@
   "description": "",
   "dependencies": {
     "@shogo82148/a1notation": "^0.2.1",
-    "csv-parse": "^5.5.6"
+    "@types/zxcvbn": "^4.4.5",
+    "csv-parse": "^5.5.6",
+    "zxcvbn": "^4.4.2"
   },
   "devDependencies": {
     "@types/node": "^22.7.4"
